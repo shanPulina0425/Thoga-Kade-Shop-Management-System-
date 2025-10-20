@@ -27,7 +27,7 @@ public class Login_Page_Controller {
     public void loginButtonACT(ActionEvent event) {
 
         try {
-            stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/View/Dashboard_Controller.fxml"))));
+            stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/View/Dashboard.fxml"))));
             Stage stage1=(Stage) loginButton.getScene().getWindow();
             stage1.close();
             stage.show();

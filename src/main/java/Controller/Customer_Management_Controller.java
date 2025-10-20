@@ -131,7 +131,7 @@ public class Customer_Management_Controller implements Initializable {
     @FXML
     void backButtonOnAction(ActionEvent event) {
         try {
-            stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/View/Dashboard_Controller.fxml"))));
+            stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/View/Dashboard.fxml"))));
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
