@@ -5,13 +5,17 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -22,6 +26,8 @@ public class Customer_Management_Controller implements Initializable {
         new Customers("2", "Ms.", "Jane Smith", "1985-05-15", 456 , "Shelbyville", "IL", "62565", "62000.00"),
         new Customers("3", "Dr.", "Emily Johnson", "1978-09-30", 789, "Capital City", "IL", "62702", "75000.00")
     );
+
+    Stage stage =new Stage();
 
 
 
@@ -45,6 +51,9 @@ public class Customer_Management_Controller implements Initializable {
 
     @FXML
     private Button deleteButton1;
+
+    @FXML
+    private Button backButton;
 
     @FXML
     private TextField dobTXT;
@@ -106,6 +115,8 @@ public class Customer_Management_Controller implements Initializable {
 
     }
 
+
+
     @FXML
     void deleteButtonACT(ActionEvent event) {
 
@@ -113,6 +124,22 @@ public class Customer_Management_Controller implements Initializable {
 
     @FXML
     void updateButtonACT(ActionEvent event) {
+
+    }
+
+
+    @FXML
+    void backButtonOnAction(ActionEvent event) {
+        try {
+            stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/View/Dashboard_Controller.fxml"))));
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        Stage stage1=new Stage();
+        stage1=(Stage) backButton.getScene().getWindow();
+        stage1.close();
+        stage.show();
+
 
     }
 
